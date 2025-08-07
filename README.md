@@ -26,12 +26,12 @@ Script que lanza la gráfica de la solución.
 
 Calcula:
 
-- Masa ADM
-- Número de bariones (Una integral)
-- N99 (99% de N)
-- r99 (Superficie en la cual se concentra el 99% de N)
-- Eb (Energía de amarre, diferencia entre M y N)
-- Compacticidad (N99/r99)
+- M: Masa ADM
+- N: Número de bariones (Una integral)
+- N99: 99% de N
+- r99: Superficie en la cual se concentra el 99% de N
+- Eb: Energía de amarre, diferencia entre M y N
+- C: Compacticidad (N99/r99)
 
 
 

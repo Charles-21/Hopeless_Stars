@@ -9,7 +9,7 @@ using Roots
 include("input.jl")
 
 # Generación de malla r
-ϵ = 1e-6  # o 1e-5, lo que veas razonable
+ϵ = 1e-6
 r = [ϵ + k * dr for k in 0:Nr] # Desplazamos un chirri la malla para que no explote el solucionador.
 
 # Sistema de ecuaciones
