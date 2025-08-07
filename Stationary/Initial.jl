@@ -9,7 +9,8 @@ using Roots
 include("input.jl")
 
 # Generación de malla r
-r = [k * dr for k in 0:Nr]
+ϵ = 1e-6  # o 1e-5, lo que veas razonable
+r = [ϵ + k * dr for k in 0:Nr] # Desplazamos un chirri la malla para que no explote el solucionador.
 
 # Sistema de ecuaciones
 function Stationary_State(a, alpha, phi, psi, r)
@@ -83,9 +84,10 @@ println("alpha0 real = ", alpha0_real)
 a, alpha, phi, psi = Solver(f0, alpha0_real)
 
 # Guardar datos
-open("Satationary_State.dat", "w") do io
+open("Stationary_State.dat", "w") do io
     write(io, "r\ta\talpha\tphi\tpsi\n")
     writedlm(io, [r a alpha phi psi], '\t')
 end
 
 end # Detener el cronómetro
+
