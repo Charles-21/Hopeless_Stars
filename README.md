@@ -5,21 +5,24 @@ Tambien se alojan códigos útiles que permiten entender el funcionamiento de di
 
 # Stationary
 
-**input.jl**
+**_input.jl_**
+
 Parámetros de integración e inicialización.
 
-**Initial.jl**
+**_Initial.jl_**
 
 Solucionador para el estado estacionario utilizando RK4 y Shooting
 
-**Stationary_State.dat**
+**_Stationary_State.dat_**
+
 Archivo de salida que contiene los datos de la solución.
 
-**stationary.gn**
+**_stationary.gn_**
+
 Script que lanza la gráfica de la solución.
 
 
-**Compacticidad.jl**
+**_Compacticidad.jl_**
 
 Calcula:
 
