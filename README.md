@@ -26,13 +26,13 @@ Script que lanza la gráfica de la solución.
 
 Calcula:
 
-- M: Masa ADM
+- M: Masa ADM (listo) 
 - N: Número de bariones (Una integral)
 - N99: 99% de N
 - r99: Superficie en la cual se concentra el 99% de N
 - C: Compacticidad (N99/r99)
 
-
+No puedo continuar escribiendo este programa hasta no resolver el problema de la adimensionalización
 
 
 
