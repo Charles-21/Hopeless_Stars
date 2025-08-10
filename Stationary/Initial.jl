@@ -78,7 +78,6 @@ end
 
 # Encontrando el valor correcto
 alpha0_real = find_zero(alpha0 -> error(f0, alpha0), alpha0_seed)
-println("alpha0 real = ", alpha0_real)
 
 # Solución
 a, alpha, phi, psi = Solver(f0, alpha0_real)
@@ -91,3 +90,4 @@ end
 
 end # Detener el cronómetro
 
+println("alpha0 real = ", alpha0_real) 

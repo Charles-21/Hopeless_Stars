@@ -31,3 +31,27 @@ N = trapz(r, j0)
 
 println("N = ", N)
 
+#----------------------#
+#--- 99% de la masa ---#
+#----------------------#
+
+# Ciclo para calcular el 99% de la masa ADM
+m99 = 0.99*m[end]
+
+counter = findfirst(x -> x >= m99, m)
+
+println("índice en el que se alcanza el 99% de la masa: ", counter)  
+
+Masa_99 = m[counter]
+
+println("Masa99 = ", Masa_99)
+
+# Radio en el que se concentra dicha cantidad de masa
+Radio_99 = r[counter]
+
+#---------------------#
+#--- Compacticidad ---#
+#---------------------#
+Compacticidad = Masa_99/Radio_99
+println("Compacticidad = ", Compacticidad)
+
