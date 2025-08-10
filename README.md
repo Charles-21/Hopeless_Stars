@@ -1,9 +1,7 @@
 # Perturbaciones dinámicas de Estrellas de Bosones
-
 El objetivo de este programa es estudiar el comportamiento dinámico de las **Estrellas de Bosones** ante perturbaciones.
 
 ---
-
 **_input.jl_**: Parámetros de integración e inicialización.
 
 ---
