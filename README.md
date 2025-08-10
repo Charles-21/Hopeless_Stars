@@ -1,25 +1,19 @@
-**Esqueleto**
+# Perturbaciones dinámicas de Estrellas de Bosones
 
-Estructura lógica que fui diseñando para hacer el programa de evolución dinámica de estrellas de bosones.
-Tambien se alojan códigos útiles que permiten entender el funcionamiento de distintos aspectos del código.
+El objetivo de este programa es estudiar el comportamiento dinámico de las **Estrellas de Bosones** ante perturbaciones.
 
-# Stationary
+**_Esqueleto_**
+Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento de distintos aspectos del código.
 
-**_input.jl_**
+### Stationary
 
-Parámetros de integración e inicialización.
+**_input.jl_**: Parámetros de integración e inicialización.
 
-**_Initial.jl_**
+**_Initial.jl_**: Solucionador para el estado estacionario utilizando RK4 y Shooting
 
-Solucionador para el estado estacionario utilizando RK4 y Shooting
+**_Stationary_State.dat_**: Archivo de salida que contiene la solución.
 
-**_Stationary_State.dat_**
-
-Archivo de salida que contiene la solución.
-
-**_stationary.gn_**
-
-Script que lanza la gráfica de la solución.
+**_stationary.gn_**: Script que lanza la gráfica de la solución.
 
 **_Compacticidad.jl_**
 
