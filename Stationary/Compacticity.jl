@@ -1,26 +1,33 @@
 using Plots
+using Trapz
 
 include("Initial.jl")
 
-# Función de masa
+
+#----------------#
+#--- Masa ADM ---#
+#----------------#
+
 m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)]
 
-# Graficar
-plt_masa = plot(r, m, size=(900, 300),
-                 xlabel="r", label=raw"m(r)", linecolor=:blue)
+# Graficar para verificar
+plt_masa = plot(r, m, size=(500, 300),
+                xlabel="r", label=raw"m(r)", linecolor=:blue)
 
 savefig(plt_masa, "masa.png")
 
-println("Masa ADM = ", m[end])
+masa_ADM = m[end]
+println("Masa ADM = ", masa_ADM)
 
+#--------------------------#
+#--- Número de Bariones ---#
+#--------------------------#
 
-#En este programa se calcula:
+# Corriente de Norther
+j0 = @. -4*pi * r^4 * phi^2 * a / alpha
 
-# Masa ADM
+# Carga conservada con Trapz
+N = trapz(r, j0)
 
-# Número de bariones
-
-# r99 (Superficie en la cual se concentra el 99% de N)
-
-# Energía de amarre
+println("N = ", N)
 

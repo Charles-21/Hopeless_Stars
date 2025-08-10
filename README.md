@@ -26,13 +26,12 @@ Script que lanza la gráfica de la solución.
 
 Calcula:
 
-- M: Masa ADM (listo) 
-- N: Número de bariones (Una integral)
-- N99: 99% de N
-- r99: Superficie en la cual se concentra el 99% de N
-- C: Compacticidad (N99/r99)
+- M: Masa ADM
+- N: Número de bariones (Una integral con Trapz)
+- material99: 99% del material. Ya sea N o M
+- r99: Superficie en la cual se concentra el 99% del material
+- C: Compacticidad (material99/r99)
 
-No puedo continuar escribiendo este programa hasta no resolver el problema de la adimensionalización
 
 
 
