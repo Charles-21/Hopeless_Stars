@@ -6,7 +6,7 @@ using Roots
 #----------------------------------------
 
 # Llamar parametros
-include("input.jl")
+include("../input.jl")
 
 # Generación de malla r
 ϵ = 1e-6
