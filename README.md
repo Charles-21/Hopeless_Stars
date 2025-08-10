@@ -15,7 +15,7 @@ Talacha con la que se estructuró la lógica y diseño del programa. Se alojan c
 
 **_stationary.gn_**: Script que lanza la gráfica de la solución.
 
-**_Compacticidad.jl_**
+**_Compacticidad.jl_**: 
 
 Calcula:
 
