@@ -2,12 +2,12 @@
 
 El objetivo de este programa es estudiar el comportamiento dinámico de las **Estrellas de Bosones** ante perturbaciones.
 
-**_Esqueleto_**
-Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento de distintos aspectos del código.
-
-### Stationary
+---
 
 **_input.jl_**: Parámetros de integración e inicialización.
+
+---
+### Stationary
 
 **_Initial.jl_**: Solucionador para el estado estacionario utilizando RK4 y Shooting
 
@@ -25,9 +25,6 @@ Calcula:
 - R99: Superficie en la cual se concentra dicha cantidad de masa
 - Compacticidad: M99/R99
 
-
-
-
-
-
-
+---
+**_Esqueleto_**
+Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionami>
