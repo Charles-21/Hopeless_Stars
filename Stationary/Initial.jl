@@ -80,12 +80,12 @@ end
 alpha0_real = find_zero(alpha0 -> error(f0, alpha0), alpha0_seed)
 
 # Solución
-a, alpha, phi, psi = Solver(f0, alpha0_real)
+a, alpha, phi1, psi1 = Solver(f0, alpha0_real)
 
 # Guardar datos
 open("Stationary_State.dat", "w") do io
     write(io, "r\ta\talpha\tphi\tpsi\n")
-    writedlm(io, [r a alpha phi psi], '\t')
+    writedlm(io, [r a alpha phi1 psi1], '\t')
 end
 
 end # Detener el cronómetro
