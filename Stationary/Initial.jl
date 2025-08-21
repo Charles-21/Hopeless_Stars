@@ -79,13 +79,22 @@ end
 # Encontrando el valor correcto
 alpha0_real = find_zero(alpha0 -> error(f0, alpha0), alpha0_seed)
 
-# Solución
+# Solución para el estado estacionario
+
 a, alpha, phi1, psi1 = Solver(f0, alpha0_real)
+
+phi2 = zeros(Float64, Nr+1)
+psi2 = zeros(Float64, Nr+1)
+pi1 = zeros(Float64, Nr+1)
+pi2 = @. - alpha0_real * a * phi1 / alpha
+
+
 
 # Guardar datos
 open("Stationary_State.dat", "w") do io
-    write(io, "r\ta\talpha\tphi\tpsi\n")
-    writedlm(io, [r a alpha phi1 psi1], '\t')
+	
+	write(io, "r\ta\talpha\tphi1\tphi2\tpsi1\tpsi2\tpi1\tpi2\n") 
+	writedlm(io, [r a alpha phi1 phi2 psi1 psi2 pi1 pi2], '\t')
 end
 
 end # Detener el cronómetro
