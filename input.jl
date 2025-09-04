@@ -10,8 +10,8 @@ println("Número de pasos espaciales: ", Nr )
 
 
 f0 = 0.1	# Valor central del campo en t=0
-alpha0_seed = 0.9322289142001354    # Semilla para arrancar el shooting
-
+alpha0_seed = 0.9322289142001354    # Semilla para arrancar Initial_Siddhartha.jl
+w_seed = 1.0726979015213376       # Semilla para arrancar Initial_Poster.jl  
 
 tf = 300        # Tiempo final de integración
 courant = 0.5   # Parámetro de Courant
