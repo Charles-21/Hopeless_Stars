@@ -8,9 +8,9 @@ using Roots
 # Llamar parametros
 include("../input.jl")
 
-# Generación de malla r
+# Generación de malla r con Nr elementos
 ϵ = 1e-6
-r = [ϵ + k * dr for k in 0:Nr] # Desplazamos un chirri la malla para que no explote el solucionador.
+r = [ϵ + k * dr for k in 0:Nr-1] # Desplazamos un chirri la malla para que no explote el solucionador.
 
 # Sistema de ecuaciones
 function Stationary_State(a, alpha, phi, psi, r)
@@ -50,10 +50,10 @@ end
 function Solver(f0, alpha0) # variables de Inicialización o arranque
 
     # Inicialización de arreglos solución
-    a = zeros(Float64, Nr + 1)
-    alpha = zeros(Float64, Nr + 1)
-    phi = zeros(Float64, Nr + 1)
-    psi = zeros(Float64, Nr + 1)
+    a = zeros(Float64, Nr)
+    alpha = zeros(Float64, Nr)
+    phi = zeros(Float64, Nr)
+    psi = zeros(Float64, Nr)
 
     # Condiciones iniciales
     a[1] = 1.0
@@ -62,7 +62,7 @@ function Solver(f0, alpha0) # variables de Inicialización o arranque
     psi[1] = 0
     
     # Ciclo solucionador
-    for k in 1:Nr
+    for k in 1:Nr-1
         a[k+1], alpha[k+1], phi[k+1], psi[k+1] = RK4(a[k], alpha[k], phi[k], psi[k], r[k], dr)
     end
     return a, alpha, phi, psi
@@ -83,9 +83,9 @@ alpha0_real = find_zero(alpha0 -> error(f0, alpha0), alpha0_seed)
 
 a, alpha, phi1, psi1 = Solver(f0, alpha0_real)
 
-phi2 = zeros(Float64, Nr+1)
-psi2 = zeros(Float64, Nr+1)
-pi1 = zeros(Float64, Nr+1)
+phi2 = zeros(Float64, Nr)
+psi2 = zeros(Float64, Nr)
+pi1 = zeros(Float64, Nr)
 pi2 = @. - alpha0_real * a * phi1 / alpha
 
 
