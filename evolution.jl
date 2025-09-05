@@ -4,6 +4,12 @@ function main()
 
   # Estado inicial
   include("Stationary/Initial_Poster.jl")
+  
+  phi1_f = zeros(Float64, Nr); phi2_f = zeros(Float64, Nr)
+  psi1_f = zeros(Float64, Nr); psi2_f = zeros(Float64, Nr)
+  pi1_f = zeros(Float64, Nr); pi2_f = zeros(Float64, Nr)
+
+
 
   open("phi1.rt", "w") do io
       write(io, "# t\tr\tphi1\n")
@@ -11,7 +17,7 @@ function main()
 
   # Ciclo principal de evolución
   local t = 0.0 
-  for n in 1:4 # Los Geht's!  
+  for n in 1:10 # Los Geht's!  
 
     # Guardado de datos
     #if n % strideT == 0
@@ -38,13 +44,6 @@ function main()
 
     # Fuentes (Discretización de los operadores/ecuaciones diferenciales)
       
-    phi1_f = zeros(Float64, Nr)
-    phi2_f = zeros(Float64, Nr)
-    psi1_f = zeros(Float64, Nr)
-    psi2_f = zeros(Float64, Nr)
-    pi1_f = zeros(Float64, Nr)
-    pi2_f = zeros(Float64, Nr)
-
     # phi
     phi1_f .= alpha .* pi1 ./ a
     phi2_f .= alpha .* pi2 ./ a
