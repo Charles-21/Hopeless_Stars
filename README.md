@@ -29,8 +29,10 @@ Discretización de las constricciones métricas.
 
 **_evolution.jl_**: 
 
-Contiene el ciclo principal de evolución y opera el almacenamiento de datos.
+Contiene el ciclo principal de evolución 
 
+**_savedata.jl_**: 
+Opera el almacenamiento de datos.
 
 **_Directorio "data"_**: 
 
