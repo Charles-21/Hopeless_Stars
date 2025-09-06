@@ -2,16 +2,20 @@
 El objetivo de este programa es estudiar el comportamiento dinámico de las **Estrellas de Bosones** ante perturbaciones.
 
 ---
-**_input.jl_**: Parámetros de integración e inicialización.
+**_input.jl_**:
+Parámetros de integración e inicialización.
 
 ---
 ### Stationary
 
-**_Initial.jl_**: Solucionador para el estado estacionario utilizando RK4 y Shooting
+**_Initial.jl_**:
+Solucionador para el estado estacionario utilizando RK4 y Shooting
 
-**_Stationary_State.dat_**: Archivo de salida que contiene la solución.
+**_Stationary_State.dat_**: 
+Archivo de salida que contiene la solución.
 
-**_stationary.gn_**: Script que lanza la gráfica de la solución.
+**_stationary.gn_**:
+Script de gnuplot que lanza la gráfica de la solución.
 
 **_Compacticidad.jl_**: 
 
@@ -23,6 +27,14 @@ Calcula:
 - R99: Superficie en la cual se concentra dicha cantidad de masa
 - Compacticidad: M99/R99
 
+**_fuentes.jl_**: 
+
+Discretización de los operadores temporales.
+
+**_evolution.jl_**: 
+
+Contiene el ciclo principal de evolución
+
 ---
 **_Esqueleto_**
-Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionami>
+Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento general.
