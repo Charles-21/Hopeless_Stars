@@ -6,8 +6,6 @@ Este programa calcula los estados estacionarios, aplica operadores temporales y 
 **_input.jl_**:
 Parámetros de integración e inicialización.
 
----
-
 **_Initial.jl_**:
 Solucionador para el estado estacionario utilizando RK4 y Shooting
 
