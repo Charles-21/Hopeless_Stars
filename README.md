@@ -43,5 +43,5 @@ Script de gnuplot que lanza la gráfica de la solución estacionaria
 La extensión ".rt" indica superficies. La extensión ".t" indica una función dependiente sólo de t.
 
 ---
-**_Esqueleto_**
-Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento general.
+**_Talacha_**
+... con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento general.
