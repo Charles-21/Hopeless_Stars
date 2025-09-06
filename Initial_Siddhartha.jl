@@ -6,7 +6,7 @@ using Roots
 #----------------------------------------
 
 # Llamar parametros
-include("../input.jl")
+include("input.jl")
 
 # Generación de malla r con Nr elementos
 ϵ = 1e-6
@@ -91,7 +91,7 @@ pi2 = @. - alpha0_real * a * phi1 / alpha
 
 
 # Guardar datos
-open("Stationary_State.dat", "w") do io
+open("data/Stationary_State.dat", "w") do io
 	
 	write(io, "r\ta\talpha\tphi1\tphi2\tpsi1\tpsi2\tpi1\tpi2\n") 
 	writedlm(io, [r a alpha phi1 phi2 psi1 psi2 pi1 pi2], '\t')

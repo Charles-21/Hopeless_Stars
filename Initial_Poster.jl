@@ -8,7 +8,7 @@ using Roots
 #----------------------------------#
 
 # Importar parámetros
-include("../input.jl")
+include("input.jl")
 
 # Generación de la malla r con Nr elementos para ser consistentes con el Compact
 ϵ = 1e-6
@@ -106,7 +106,7 @@ pi2 = @. - w * a * phi1 / alpha
 
 # y hasta aquí, todo se llama como se tiene que llamar. Procedemos a guardar
 
-open("Stationary_State.dat", "w") do io
+open("data/Stationary_State.dat", "w") do io
   write(io, "r\ta\talpha\tphi1\tphi2\tpsi1\tpsi2\tpi1\tpi2\n")
   writedlm(io, [r a alpha phi1 phi2 psi1 psi2 pi1 pi2], '\t')
 end 

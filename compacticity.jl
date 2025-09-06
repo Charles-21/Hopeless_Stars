@@ -14,7 +14,7 @@ m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)]
 plt_masa = Plots.plot(r, m, size=(500, 300),
                 xlabel="r", label=raw"m(r)", linecolor=:blue)
 
-Plots.savefig(plt_masa, "masa.png")
+Plots.savefig(plt_masa, "data/masa.png")
 
 masa_ADM = m[end]
 println("Masa ADM = ", masa_ADM)
