@@ -1,4 +1,4 @@
-# Perturbando los estados estacionarios de las Estrellas de Bosones (BS's)
+# *Perturbando los estados estacionarios de las Estrellas de Bosones (BS's)*
 
 Este programa calcula los estados estacionarios, aplica operadores temporales y encuentra su dinámica ante perturbaciones.
 
