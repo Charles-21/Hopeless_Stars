@@ -12,7 +12,7 @@ function main()
 
   # Ciclo principal de evolución
   local t = 0.0 
-  for n in 1:10 # Los Geht's!  
+  for n in 1:80 # Los Geht's!  
 
     # Guardado de datos
     #if n % strideT == 0

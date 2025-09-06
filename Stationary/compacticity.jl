@@ -1,7 +1,7 @@
 import Plots
 using Trapz
 
-include("Initial_Siddhartha.jl")
+include("Initial_Poster.jl")
 
 
 #----------------#
