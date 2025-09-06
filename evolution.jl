@@ -9,16 +9,11 @@ include("savedata.jl")
 
 function evolve() # Función principal de evolución
 
-    # Primera etiqueta del archivo de datos
-    open("data/phi1.rt", "w") do io
-        write(io, "# t\tr\tphi1\n")
-    end
-
     #------------------------------------#
     #--- Ciclo principal de evolución ---#
     #------------------------------------#
     local t = 0.0
-    for n in 1:80 # Los Geht's!
+    for n in 1:200 # Los Geht's!
 
       # Guardando Pasos temporales
       Save_Data!(n, t, r, strideT, strideR, Nr, phi1)
