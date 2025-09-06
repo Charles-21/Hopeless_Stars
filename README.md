@@ -37,4 +37,4 @@ Contiene el ciclo principal de evolución
 
 ---
 **_Esqueleto_**
-Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionami>
+Talacha con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento general.
