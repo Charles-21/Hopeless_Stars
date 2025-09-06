@@ -38,40 +38,52 @@ function evolve() # Función principal de evolución
       pi1_p = copy(pi1); pi2_p = copy(pi2)
       #----------------------------------------
 
+      #-----------------------------#
+      #--- Ciclo interno del ICN ---#
+      #-----------------------------#
+      for k in 1:3
+              # Calculando las fuentes
+              fuentes!(phi1_f, phi2_f, psi1_f, psi2_f, pi1_f, pi2_f, phi1, phi2, psi1, psi2, pi1, pi2, Nr, dr, r)
+              #-------------------------------------------------------------------------------------------------
 
-      # Calculando las fuentes
-      fuentes!(phi1_f, phi2_f, psi1_f, psi2_f, pi1_f, pi2_f, phi1, phi2, psi1, psi2, pi1, pi2, Nr, dr, r)
-      #-------------------------------------------------------------------------------------------------
-
-
-      # Cálculo del Paso Temporal
-      phi1 .= phi1_p .+ dt .* phi1_f
-      phi2 .= phi2_p .+ dt .* phi2_f
-
-      psi1 .= psi1_p .+ dt .* psi1_f
-      psi2 .= psi2_p .+ dt .* psi2_f
-
-      pi1 .= pi1_p .+ dt .* pi1_f
-      pi2 .= pi2_p .+ dt .* pi2_f
-      #------------------------------
+              # Flujo del ICN
+              if k < 3
+                 dtw = 0.5 * dt
+              else
+                  dtw = dt
+              end # del if
 
 
-      # Condiciones de frontera
-      psi1[1] = -psi1[2]
-      psi2[1] = -psi2[2]
-      pi1[1] = pi1[2]
-      pi2[1] = pi2[2]
 
-      byron = 1 + dt/dr + dt/r[Nr] 
-      pi1[Nr] = (pi1[Nr-1]*(dt/dr - 1) + pi1_p[Nr]*(1 - dt/dr - dt/r[Nr]) + pi1_p[Nr-1]*(dt/dr + 1))/byron
-      pi2[Nr] = (pi2[Nr-1]*(dt/dr - 1) + pi2_p[Nr]*(1 - dt/dr - dt/r[Nr]) + pi2_p[Nr-1]*(dt/dr + 1))/byron
-      psi1[Nr] = -pi1[Nr] - phi1[Nr]/r[Nr]
-      psi2[Nr] = -pi2[Nr] - phi2[Nr]/r[Nr]
-      #-------------------------------------
+              # Cálculo del Paso Temporal
+              phi1 .= phi1_p .+ dtw .* phi1_f
+              phi2 .= phi2_p .+ dtw .* phi2_f
 
-      # Calculando la métrica
-      Constricciones_metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
-      #------------------------------------------------------------------------------
+              psi1 .= psi1_p .+ dtw .* psi1_f
+              psi2 .= psi2_p .+ dtw .* psi2_f
+
+              pi1 .= pi1_p .+ dtw .* pi1_f
+              pi2 .= pi2_p .+ dtw .* pi2_f
+              #------------------------------
+
+
+              # Condiciones de frontera
+              psi1[1] = -psi1[2]
+              psi2[1] = -psi2[2]
+              pi1[1] = pi1[2]
+              pi2[1] = pi2[2]
+
+              byron = 1 + dtw/dr + dtw/r[Nr] 
+              pi1[Nr] = (pi1[Nr-1]*(dtw/dr - 1) + pi1_p[Nr]*(1 - dtw/dr - dtw/r[Nr]) + pi1_p[Nr-1]*(dtw/dr + 1))/byron
+              pi2[Nr] = (pi2[Nr-1]*(dtw/dr - 1) + pi2_p[Nr]*(1 - dtw/dr - dtw/r[Nr]) + pi2_p[Nr-1]*(dtw/dr + 1))/byron
+              psi1[Nr] = -pi1[Nr] - phi1[Nr]/r[Nr]
+              psi2[Nr] = -pi2[Nr] - phi2[Nr]/r[Nr]
+              #-------------------------------------
+
+              # Calculando la métrica
+              Constricciones_metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+              #------------------------------------------------------------------------------
+      end # del ciclo interno del ICN
 
       t += dt # Actualización del tiempo
 
