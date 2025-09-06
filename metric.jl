@@ -30,7 +30,6 @@ function Constricciones_metricas!(a, alpha,
       a[i] = a[i-1] + dr * ssa
   end
   
-  
   #--- Fin del ciclo de a ---#
   
   alpha[Nr] = 1.0/a[Nr]
