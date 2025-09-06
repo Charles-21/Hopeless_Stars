@@ -1,6 +1,6 @@
 # *Perturbando estados de equilibrio de Estrellas de Bosones (BS's)*
 
-Este programa calcula los estados estacionarios, aplica operadores temporales y encuentra su dinámica ante perturbaciones.
+Para determinar si una BS está en un estado de equilibrio estable o inestable, este programa calcula dicho estado, le aplica una perturbación y muestra su comportamiento en el tiempo.
 
 ---
 **_input.jl_**:
