@@ -1,21 +1,15 @@
-# Perturbaciones dinámicas de Estrellas de Bosones
-El objetivo de este programa es estudiar el comportamiento dinámico de las **Estrellas de Bosones** ante perturbaciones.
+# Perturbando los estados estacionarios de las Estrellas de Bosones (BS's)
+
+Este programa calcula los estados estacionarios, aplica operadores temporales y encuentra su dinámica ante perturbaciones.
 
 ---
 **_input.jl_**:
 Parámetros de integración e inicialización.
 
 ---
-### Stationary
 
 **_Initial.jl_**:
 Solucionador para el estado estacionario utilizando RK4 y Shooting
-
-**_Stationary_State.dat_**: 
-Archivo de salida que contiene la solución.
-
-**_stationary.gn_**:
-Script de gnuplot que lanza la gráfica de la solución.
 
 **_Compacticidad.jl_**: 
 
@@ -31,9 +25,24 @@ Calcula:
 
 Discretización de los operadores temporales.
 
+**_metric.jl_**: 
+
+Discretización de las constricciones métricas.
+
 **_evolution.jl_**: 
 
-Contiene el ciclo principal de evolución
+Contiene el ciclo principal de evolución y opera el almacenamiento de datos.
+
+
+**_Directorio "data"_**: 
+
+**_Stationary_State.dat_**: 
+Archivo de salida que contiene la solución estacionaria.
+
+**_stationary.gn_**:
+Script de gnuplot que lanza la gráfica de la solución estacionaria
+
+La extensión ".rt" indica superficies. La extensión ".t" indica una función dependiente sólo de t.
 
 ---
 **_Esqueleto_**
