@@ -53,11 +53,6 @@ println("Compacticidad = ", Compacticidad)
 
 
 println()
-println("|---------------------------|")  
-println("|---Parámetros calculados---|") 
-println("|---------------------------|")
-println()
-println()
 println()
 
 

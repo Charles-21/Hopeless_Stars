@@ -1,6 +1,9 @@
 function Save_Data!(n, t, r, strideT, strideR, Nr,
                     phi1)
     if n % strideT == 0
+
+	println(t) # Imprimiendo en pantalla el contador temporal 
+
         open("data/phi1.t", "a") do io
             write(io, "$(t)\t$(phi1[begin])\n")
         end # del do

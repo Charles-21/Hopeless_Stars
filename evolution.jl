@@ -1,11 +1,18 @@
+
+
 using DelimitedFiles
 
 # Estado inicial y subrutinas
-include("initial.jl")
+include("compacticity.jl")
 include("fuentes.jl")
 include("metric.jl")
 include("savedata.jl")
 
+println("|---------------------------|")
+println("|---Comienza la Evolución---|")
+println("|---------------------------|") 
+println()
+println("Tiempo de evolución")
 
 function evolve() # Función principal de evolución
 
@@ -80,4 +87,13 @@ function evolve() # Función principal de evolución
     end # del ciclo principal de evolución
 end # de la función principal de evolución
 
+
+# Ejecutando la función de evolución
 evolve()
+
+println("|----------------------------------------------------|")  
+println("|---Fin de la Evolución. Que tengas un buen día :)---|") 
+println("|----------------------------------------------------|")
+println()
+
+
