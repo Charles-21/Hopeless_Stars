@@ -1,7 +1,7 @@
 using DelimitedFiles
 
 # Estado inicial y subrutinas
-include("Initial_Poster.jl")
+include("initial.jl")
 include("fuentes.jl")
 include("metric.jl")
 include("savedata.jl")
