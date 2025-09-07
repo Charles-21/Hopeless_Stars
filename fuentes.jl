@@ -22,7 +22,7 @@ function fuentes!(phi1_f, phi2_f,
       psi2_f[i] = 0.5/dr * (
             alpha[i+1]*pi2[i+1]/a[i+1] -
             alpha[i-1]*pi2[i-1]/a[i-1] )
-    end
+    end # del for
 
     # pi en dos bucles
     for i in 2:10
@@ -37,7 +37,7 @@ function fuentes!(phi1_f, phi2_f,
           alpha[i-1]*r[i-1]^2*psi2[i-1]/a[i-1]) /
           (r[i+1]^3 - r[i-1]^3))
           - a[i]*alpha[i]*phi2[i]
-    end
+    end # del for
 
     for i in 11:Nr-1
       pi1_f[i] = 0.5/dr * (
@@ -47,8 +47,8 @@ function fuentes!(phi1_f, phi2_f,
       pi2_f[i] = 0.5/dr * (
           (alpha[i+1]*r[i+1]^2*psi2[i+1]/a[i+1] -
           alpha[i-1]*r[i-1]^2*psi2[i-1]/a[i-1]))/ r[i]^2 - a[i]*alpha[i]*phi2[i]
-    end
+    end # del for
 
     return nothing
-end
+end # de la función fuentes
 
