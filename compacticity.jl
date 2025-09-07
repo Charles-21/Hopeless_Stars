@@ -2,6 +2,11 @@ using Trapz
 
 include("initial.jl")
 
+println("|---------------------------|")
+println("|---Calculando Parámetros---|")
+println("|---------------------------|") 
+println()
+
 #----------------#
 #--- Masa ADM ---#
 #----------------#
@@ -44,4 +49,21 @@ Radio_99 = r[counter]
 #---------------------#
 Compacticidad = Masa_99/Radio_99
 println("Compacticidad = ", Compacticidad)
+
+
+
+println()
+println("|---------------------------|")  
+println("|---Parámetros calculados---|") 
+println("|---------------------------|")
+println()
+println()
+println()
+
+
+
+
+
+
+
 

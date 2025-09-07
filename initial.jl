@@ -4,9 +4,9 @@ using Roots
 # Estados Estacionarios
 #----------------------------------------
 
-println("-------------------------------")
-println("Calculando Estado de Equilibrio")
-println("-------------------------------") 
+println("|-------------------------------------|")
+println("|---Calculando Estado de Equilibrio---|")
+println("|-------------------------------------|") 
 
 
 # Llamar parametros
@@ -107,10 +107,12 @@ println()
 println("alpha0 seed = ", alpha0_seed)
 println("alpha0 real = ", alpha0_real) 
 println()
-println("------------------------------")  
-println("Estado de Equilibrio calculado") 
-println("------------------------------")
-
+println("|------------------------------------|")  
+println("|---Estado de Equilibrio calculado---|") 
+println("|------------------------------------|")
+println() 
+println()  
+println()  
 
 
 
