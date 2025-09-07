@@ -11,7 +11,7 @@ function Save_Data!(n, t, r, strideT, strideR, Nr,
             end # del for
             write(io, "\n")
         end # del do
-    end
+    end # del if
     return nothing
-end
+end # de la función Save_Data
 
