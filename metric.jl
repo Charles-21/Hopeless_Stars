@@ -1,10 +1,9 @@
 function Constricciones_metricas!(a, alpha, 
-                                phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+                                phi1, phi2, psi1, psi2, pi1, pi2, 
+                                dr, Nr, r)
 
   a[1] = a[2] = 1.0
-
-  #--- Constricción para a ---#
-
+  #--- Ciclo para a ---#
   for i in 3:Nr
       rhoa = 0.5 * ( (pi1[i-1]^2 + pi2[i-1]^2 +
                         psi1[i-1]^2 + psi2[i-1]^2) / a[i-1]^2 +
@@ -28,9 +27,7 @@ function Constricciones_metricas!(a, alpha,
       ssa = rk1 * ( (1.0 - rk1^2) / (r[i-1] + r[i]) + rk1^2 * rrhoa )
 
       a[i] = a[i-1] + dr * ssa
-  end
-  
-  #--- Fin del ciclo de a ---#
+  end # del ciclo de a 
   
   alpha[Nr] = 1.0/a[Nr]
 
@@ -66,7 +63,7 @@ function Constricciones_metricas!(a, alpha,
 
     alpha[i] = alpha[i+1] - dr * aux * ssalpha
   
-  end #--- Fin del ciclo de alpha ---#
+  end # del ciclo de alpha 
 
   alpha[1] = alpha[2]
   
