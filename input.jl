@@ -32,7 +32,9 @@ strideT = max(1, div(Nt, SaveDataT))
 
 # Perturbación Gaussiana
 
-
+A = 0.0008 # Amplitud gaussiana
+sigma = 0.1 # Utilizado por Siddhartha
+r0 = 6.0 # Utilizado por Siddhartha
  
 
 

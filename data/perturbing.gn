@@ -1,0 +1,31 @@
+set terminal qt size 1000,800 enhanced font 'Verdana,10'
+
+unset output 
+
+set multiplot layout 2,2 title "Estado Perturbado" font ",14"
+
+# Gráfica 1: r vs a & alpha
+set title "Metric"
+set xlabel "r"
+plot "Perturbing_State.dat" using 1:2 with lines title "a(r)", "Stationary_State.dat" using 1:3 with lines title "alpha(r)"  
+
+# Gráfica 2: r vs phi
+set title "phi(r)"
+set xlabel "r"
+set ylabel "phi"
+plot "Perturbing_State.dat" using 1:4 with lines title "phi1(r)", "Stationary_State.dat" using 1:5 with lines title "phi2(r)" 
+
+# Gráfica 3: r vs psi
+set title "psi(r)"
+set xlabel "r"
+set ylabel "psi"
+plot "Perturbing_State.dat" using 1:6 with lines title "psi1(r)", "Stationary_State.dat" using 1:7 with lines title "psi2(r)"
+
+# Gráfica 4: r vs pi
+set title "pi(r)"
+set xlabel "r"
+set ylabel "pi"
+plot "Perturbing_State.dat" using 1:8 with lines title "pi1(r)", "Stationary_State.dat" using 1:9 with lines title "pi2(r)" 
+
+unset multiplot
+pause -1 "Presiona ENTER para cerrar la ventana"
