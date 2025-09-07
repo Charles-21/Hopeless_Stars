@@ -13,7 +13,7 @@ function evolve() # Función principal de evolución
     #--- Ciclo principal de evolución ---#
     #------------------------------------#
     local t = 0.0
-    for n in 1:200 # Los Geht's!
+    for n in 1:Nt # Los Geht's!
 
       # Guardando Pasos temporales
       Save_Data!(n, t, r, strideT, strideR, Nr, phi1)

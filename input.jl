@@ -13,7 +13,7 @@ f0 = 0.1	# Valor central del campo en t=0
 alpha0_seed = 0.9322289142001354    # Semilla para arrancar Initial_Siddhartha.jl
 w_seed = 1.0726979015213376       # Semilla para arrancar Initial_Poster.jl  
 
-tf = 30         # Tiempo final de integración
+tf = 20         # Tiempo final de integración
 courant = 0.5   # Parámetro de Courant
 dt = courant*dr # Tamaño del paso temporal
 Nt = Int(tf/dt) # Calculamos el número de pasos temporales
