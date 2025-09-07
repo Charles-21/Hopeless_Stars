@@ -6,18 +6,22 @@ Para determinar si una BS está en un estado de equilibrio estable o inestable, 
 **_input.jl_**:
 Parámetros de integración e inicialización.
 
-**_Initial.jl_**:
+**_initial.jl_**:
 Solucionador para el estado estacionario utilizando RK4 y Shooting
 
-**_Compacticidad.jl_**: 
+**_compacticity.jl_**: 
 
-Calcula:
+Para el estado de equilibrio, calcula:
 
 - M: Masa ADM
 - N: Número de bariones (Una integral con Trapz)
 - M99: 99% de la masa ADM
 - R99: Superficie en la cual se concentra dicha cantidad de masa
 - Compacticidad: M99/R99
+
+**_perturbing.jl_**:  
+
+Añade la perturbación y realiza los calculos de compacticity.jl para el estado perturbado
 
 **_fuentes.jl_**: 
 
