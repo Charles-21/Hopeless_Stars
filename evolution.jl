@@ -1,9 +1,7 @@
-
-
 using DelimitedFiles
 
 # Estado inicial y subrutinas
-include("compacticity.jl")
+include("perturbing.jl")
 include("fuentes.jl")
 include("metric.jl")
 include("savedata.jl")
@@ -89,7 +87,11 @@ end # de la función principal de evolución
 
 
 # Ejecutando la función de evolución
+@time begin
 evolve()
+println()
+println("Tiempo de ejecución: ")
+end # del cronómetro
 
 println("|----------------------------------------------------|")  
 println("|---Fin de la Evolución. Que tengas un buen día :)---|") 
