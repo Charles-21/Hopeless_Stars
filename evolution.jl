@@ -19,15 +19,15 @@ println("|---------------------------|")
 println()
 println("Tiempo de evolución")
 
-adot = zeros(Float64, Nr)
-
 function evolve() # Función principal de evolución
 
-    #------------------------------------#
+		adot = zeros(Float64, Nr)
+		L2 = 0.0
+    
+		#------------------------------------#
     #--- Ciclo principal de evolución ---#
     #------------------------------------#
     local t = 0.0
-		L2 = 0.0
     for n in 1:Nt # Los Geht's!
 
       # Guardando Pasos temporales
@@ -90,7 +90,7 @@ function evolve() # Función principal de evolución
               #------------------------------------------------------------------------------
       end # del ciclo interno del ICN
 
-			# La molesta adot
+			# La molesta adot y su norma L2
 			for j in 1:Nr
 					Srr_p = r[j] * alpha_p[j] * (psi1_p[j] * pi1_p[j] + psi2_p[j] * pi2_p[j])
 					Srr   = r[j] * alpha[j]   * (psi1[j]   * pi1[j]   + psi2[j]   * pi2[j])
@@ -100,7 +100,7 @@ function evolve() # Función principal de evolución
 			# Norma L2 de adot
 			L2 = sqrt(trapz(r, adot.^2))
 
-      t += dt # Actualización del tiempo
+			t += dt # Actualización del tiempo
 
     end # del ciclo principal de evolución
 end # de la función principal de evolución
