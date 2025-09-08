@@ -25,7 +25,7 @@ Para el estado de equilibrio, calcula:
 
 **_perturbing.jl_**:  
 
-Añade la perturbación y realiza los calculos de compacticity.jl para el estado perturbado
+Añade la perturbación gaussiana y realiza los calculos de compacticity.jl para el estado perturbado
 
 **_fuentes.jl_**: 
 
