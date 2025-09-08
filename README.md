@@ -5,7 +5,7 @@ Para determinar si una BS está en un estado de equilibrio estable o inestable, 
 ---
 
 **_Makefile_**:
-Contiene dos comandos: run para ejecutar la evolución y clean para borrar los datos generados después de una evolución.
+Contiene dos comandos: **run** para ejecutar la evolución y **clean** para borrar los datos generados después de una evolución.
 
 **_input.jl_**:
 Parámetros de integración e inicialización.
