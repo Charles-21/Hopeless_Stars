@@ -4,13 +4,13 @@
 
 # Dominio espacial
 
-rf = 59.0	# Tamaño del dominio espacial
-dr = 0.05	# Resolución espacial
+rf = 41.0	# Tamaño del dominio espacial
+dr = 0.02	# Resolución espacial
 
 Nr = Int(rf/dr)	# Determinamos el número de pasos
 
-f0 = 0.1	# Valor central del campo en t=0
-alpha0_seed = 0.9322289142001354    # Semilla para arrancar Initial_Siddhartha.jl
+f0 = 0.2	# Valor central del campo en t=0
+alpha0_seed = 0.8591596820347277     # Semilla para arrancar Initial_Siddhartha.jl
 w_seed = 1.0726979015213376       # Semilla para arrancar Initial_Poster.jl  
 
 # Dominio temporal
@@ -36,7 +36,3 @@ pert = false # ¿Deseas perturbar el Estado de Equilibrio?
 A = 0.0008 # Amplitud gaussiana
 sigma = 0.1 # Utilizado por Siddhartha
 r0 = 6.0 # Utilizado por Siddhartha
- 
-
-
-
