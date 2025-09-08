@@ -31,7 +31,7 @@ strideT = max(1, div(Nt, SaveDataT))
 
 
 # Perturbación Gaussiana
-pert = false # ¿Deseas perturbar el Estado de Equilibrio?
+pert = true # ¿Deseas perturbar el Estado de Equilibrio?
 
 A = 0.0008 # Amplitud gaussiana
 sigma = 0.1 # Utilizado por Siddhartha
