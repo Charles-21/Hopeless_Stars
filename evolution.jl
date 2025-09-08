@@ -1,7 +1,14 @@
 using DelimitedFiles
 
 # Estado inicial y subrutinas
-include("perturbing.jl")
+include("input.jl")
+
+if pert
+    include("perturbing.jl")
+else
+    include("compacticity.jl")
+end
+
 include("fuentes.jl")
 include("metric.jl")
 include("savedata.jl")
