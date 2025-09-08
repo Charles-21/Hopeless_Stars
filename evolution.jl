@@ -21,8 +21,9 @@ println("Tiempo de evolución")
 
 function evolve() # Función principal de evolución
 
-	adot = zeros(Float64, Nr)
-	L2 = 0.0
+		masa = zeros(Float64, Nr)
+		adot = zeros(Float64, Nr)
+		L2 = 0.0
     #------------------------------------#
     #--- Ciclo principal de evolución ---#
     #------------------------------------#
@@ -30,7 +31,7 @@ function evolve() # Función principal de evolución
     for n in 1:Nt # Los Geht's!
 
       # Guardando Pasos temporales
-      Save_Data!(n, t, r, strideT, strideR, Nr, phi1, L2)
+      Save_Data!(n, t, r, strideT, strideR, Nr, phi1, L2, masa)
       #----------------------------------------
 
 
@@ -88,6 +89,9 @@ function evolve() # Función principal de evolución
               Constricciones_metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
               #------------------------------------------------------------------------------
       end # del ciclo interno del ICN
+
+		# Masa ADM en el tiempo
+		masa = @. r/2 * (1 - 1/a^2)
 
 		# La molesta adot y su norma L2
 		for j in 1:Nr
