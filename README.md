@@ -44,8 +44,7 @@ Opera el almacenamiento de datos.
 
 **_Directorio "data"_**: 
 
-**_stationary.gn_**:
-**_perturbing.gn_**:
+**_stationary.gn_**, **_perturbing.gn_**: 
 Scripts de gnuplot que lanzan la gráfica del estado inicial.
 
 La extensión ".rt" indica superficies. La extensión ".t" indica una función dependiente sólo de t.
