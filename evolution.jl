@@ -19,20 +19,23 @@ println("|---------------------------|")
 println()
 println("Tiempo de evolución")
 
+adot = zeros(Float64, Nr)
+
 function evolve() # Función principal de evolución
 
     #------------------------------------#
     #--- Ciclo principal de evolución ---#
     #------------------------------------#
     local t = 0.0
+		L2 = 0.0
     for n in 1:Nt # Los Geht's!
 
       # Guardando Pasos temporales
-      Save_Data!(n, t, r, strideT, strideR, Nr, phi1)
+      Save_Data!(n, t, r, strideT, strideR, Nr, phi1, L2)
       #----------------------------------------
 
 
-      # Vertimos el estado inicial
+      # Truco soñado del pasito perrón
       a_p = copy(a); alpha_p = copy(alpha)
 
       phi1_p = copy(phi1); psi2_p = copy(psi2)
@@ -40,11 +43,11 @@ function evolve() # Función principal de evolución
       pi1_p = copy(pi1); pi2_p = copy(pi2)
       #----------------------------------------
 
-      #-----------------------------#
-      #--- Ciclo interno del ICN ---#
-      #-----------------------------#
+      #---------------------------------------------------#
+      #--- Ciclo interno del Iterative Crank-Nicholson ---#
+      #---------------------------------------------------#
       for k in 1:3
-              # Calculando las fuentes
+              # Calculando las fuentes del pedregal
               fuentes!(phi1_f, phi2_f, psi1_f, psi2_f, pi1_f, pi2_f, phi1, phi2, psi1, psi2, pi1, pi2, Nr, dr, r)
               #-------------------------------------------------------------------------------------------------
 
@@ -87,6 +90,16 @@ function evolve() # Función principal de evolución
               #------------------------------------------------------------------------------
       end # del ciclo interno del ICN
 
+			# La molesta adot
+			for j in 1:Nr
+					Srr_p = r[j] * alpha_p[j] * (psi1_p[j] * pi1_p[j] + psi2_p[j] * pi2_p[j])
+					Srr   = r[j] * alpha[j]   * (psi1[j]   * pi1[j]   + psi2[j]   * pi2[j])
+					adot[j] = (a[j] - a_p[j]) / dt - 0.5 * (Srr_p + Srr)
+			end # del for de adot
+
+			# Norma L2 de adot
+			L2 = sqrt(trapz(r, adot.^2))
+
       t += dt # Actualización del tiempo
 
     end # del ciclo principal de evolución
@@ -104,5 +117,3 @@ println("|----------------------------------------------------|")
 println("|---Fin de la Evolución. Que tengas un buen día :)---|") 
 println("|----------------------------------------------------|")
 println()
-
-
