@@ -47,6 +47,8 @@ Opera el almacenamiento de datos.
 **_stationary.gn_**, **_perturbing.gn_**: 
 Scripts de gnuplot que lanzan la gráfica del estado inicial.
 
+Saludos desde la compu del cantón
+
 La extensión ".rt" indica superficies. La extensión ".t" indica una función dependiente sólo de t.
 
 ---
