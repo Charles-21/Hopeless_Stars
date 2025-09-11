@@ -93,14 +93,16 @@ pi1 = zeros(Float64, Nr)
 pi2 = @. - alpha0_real * a * phi1 / alpha
 
 # Función de masa de Schwarzschild
-m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)] 
+m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)]
 
+# Verificando si el producto da 1
+Sigmata = a .* alpha
 
 # Guardar datos
 open("data/Stationary_State.dat", "w") do io
 	
-	write(io, "r\ta\talpha\tphi1\tphi2\tpsi1\tpsi2\tpi1\tpi2\tm\n") 
-	writedlm(io, [r a alpha phi1 phi2 psi1 psi2 pi1 pi2 m], '\t')
+	write(io, "r\ta\talpha\tphi1\tphi2\tpsi1\tpsi2\tpi1\tpi2\tm\tSigmata\n") 
+	writedlm(io, [r a alpha phi1 phi2 psi1 psi2 pi1 pi2 m Sigmata], '\t')
 end #del do
 
 println()
@@ -108,8 +110,3 @@ println("alpha0 seed = ", alpha0_seed)
 println("alpha0 real = ", alpha0_real) 
 println()
 println()  
-
-
-
-
-
