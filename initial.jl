@@ -87,11 +87,10 @@ alpha0_real = find_zero(alpha0 -> error(f0, alpha0), alpha0_seed)
 a, alphajor, phi1, psi1 = Solver(f0, alpha0_real) # Esta no es la alpha chida
 
 # Obteniendo el último valor de alpha
-alpha_infinito = alphajor[end]
-factor_reescalamiento = 1/alpha_infinito
+alpha_infinito = 1/ (a[end]*alphajor[end])
 
 # a = (PALOMITA)
-alpha = factor_reescalamiento .* alphajor
+alpha = alpha_infinito .* alphajor
 # phi1 = (PALOMITA)
 phi2 = zeros(Float64, Nr)
 # psi2 = (PALOMITA)
