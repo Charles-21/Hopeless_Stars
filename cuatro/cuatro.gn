@@ -1,0 +1,11 @@
+set terminal qt persist
+set title "Cociente entre L2_Adot y L2_adot"
+set xlabel "Tiempo"
+set ylabel "Cociente"
+set grid
+set key top right
+
+plot "< paste L2_Adot.t L2_adot.t" using 1:($2/$4) w l lw 2 lc rgb "blue" title "Cociente Adot", \
+     4.0 w l lw 1 lc rgb "red" dashtype 2 title "Referencia y=4", \
+     0.0 w l lw 1 lc rgb "black" dashtype 3
+

@@ -4,13 +4,13 @@
 
 # Dominio espacial
 
-rf = 41.0	# Tamaño del dominio espacial
-dr = 0.02	# Resolución espacial
+rf = 37.0	# Tamaño del dominio espacial
+dr = 0.01	# Resolución espacial
 
 Nr = Int(rf/dr)	# Determinamos el número de pasos
 
 f0 = 0.2	# Valor central del campo en t=0
-alpha0_seed = 0.8591596820347277     # Semilla para arrancar Initial_Siddhartha.jl
+w_seed = 1.1639281027103714        # Semilla para arrancar Initial_Poster.jl  
 
 # Dominio temporal
 

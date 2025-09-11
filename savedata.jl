@@ -9,7 +9,7 @@ function Save_Data!(n, t, r, strideT, strideR, Nr, phi1, L2, masa)
         end # del do
 
         # Norma de adot
-        open("data/L2_adot.t", "a") do io
+        open("cuatro/L2_adot.t", "a") do io
             write(io, "$(t)\t$(L2)\n")
         end # del do
 
