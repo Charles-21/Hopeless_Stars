@@ -3,12 +3,16 @@ include("metric.jl")
 
 println("Aplicando la Perturbación...")
 
+phi1_pp = copy(phi1)
+psi1_pp = copy(psi1)
+p11_pp = copy(pi1)
+
 # Definiendo la perturbación
-perturbacion = [A * exp(-(i - r0)^2 / sigma) for i in r]
+perturbacion = [A * exp(-(i - r0)^2 / 0.1) for i in r]
 
 # Aplicando la perturbación a los campos
-phi1 .+= perturbacion
-psi1 .-= (2.0/sigma) .* (r .- r0) .* perturbacion
+phi1 = phi1_pp + perturbacion
+psi1 = psi1_pp - (2.0/0.1) .* (r .- r0) .* perturbacion
 pi1 .= -alpha0_real .* a ./ alpha .* phi1
 
 # Recalculando la métrica
