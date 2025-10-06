@@ -1,4 +1,4 @@
-function SuperMetrica!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+function SuperMetrica!(a, alpha, phi1, psi1, dr, Nr, r)
 
     # Ecuación de a 
     function deq_a(r_loc, a_loc, alpha_loc, phi1_loc, psi1_loc)

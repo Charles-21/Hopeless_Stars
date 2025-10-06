@@ -10,10 +10,9 @@ dperturbacion = @. -2 * (r - r0) / 0.1 * perturbacion # Derivada de la fokin per
 # Aplicando la perturbación a los campos
 phi1 .+= perturbacion
 psi1 .+= dperturbacion
-pi1 .= -alpha0_real .* a ./ alpha .* phi1
 
 # Recalculando la métrica
-SuperMetrica!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+#SuperMetrica!(a, alpha, phi1, psi1, dr, Nr, r) 
 
 # Recalculando la masa de Schwarzschild
 m_p = @. 0.5*r*(1 - 1/a^2)
