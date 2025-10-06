@@ -1,25 +1,23 @@
 include("compacticity.jl")
-include("metric.jl")
+include("memetric.jl")
 
 println("Aplicando la Perturbación...")
 
-phi1_pp = copy(phi1)
-psi1_pp = copy(psi1)
-p11_pp = copy(pi1)
 
 # Definiendo la perturbación
-perturbacion = [A * exp(-(i - r0)^2 / 0.1) for i in r]
+perturbacion =  @. A * exp(-(r - r0)^2 / 0.1)
+dperturbacion = @. -2 * (r - r0) / 0.1 * perturbacion # Derivada de la fokin perturbacion
 
 # Aplicando la perturbación a los campos
-phi1 = phi1_pp + perturbacion
-psi1 = psi1_pp - (2.0/0.1) .* (r .- r0) .* perturbacion
-pi1 .= -alpha0_real .* a ./ alpha .* phi1
+phi1 .+= perturbacion
+psi1 .+= dperturbacion
+# pi1 .= -alpha0_real .* a ./ alpha .* phi1
 
 # Recalculando la métrica
-Constricciones_metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+Metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
 
 # Recalculando la masa de Schwarzschild
-m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)] 
+m = @. 0.5*r*(1 - 1/a^2)
 
 # Guardar datos
 open("data/Perturbing_State.dat", "w") do io

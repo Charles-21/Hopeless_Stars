@@ -32,5 +32,5 @@ strideT = max(1, div(Nt, SaveDataT))
 # Perturbación Gaussiana
 pert = true # ¿Deseas perturbar el Estado de Equilibrio?
 
-A = 0.0008 # Amplitud gaussiana
+A = 8e-4 # Amplitud gaussiana
 r0 = 6.0 # Desfase utilizado por Siddhartha
