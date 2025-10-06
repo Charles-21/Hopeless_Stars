@@ -1,20 +1,19 @@
 include("compacticity.jl")
-include("memetric.jl")
+include("supermetric.jl")
 
 println("Aplicando la Perturbación...")
 
-
 # Definiendo la perturbación
-perturbacion =  @. 0.0 * exp(-(r - r0)^2 / 0.1)
+perturbacion =  @. A * exp(-(r - r0)^2 / 0.1)
 dperturbacion = @. -2 * (r - r0) / 0.1 * perturbacion # Derivada de la fokin perturbacion
 
 # Aplicando la perturbación a los campos
 phi1 .+= perturbacion
-#psi1 .+= dperturbacion
-#pi1 .= -alpha0_real .* a ./ alpha .* phi1
+psi1 .+= dperturbacion
+pi1 .= -alpha0_real .* a ./ alpha .* phi1
 
 # Recalculando la métrica
-Metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
+SuperMetrica!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
 
 # Recalculando la masa de Schwarzschild
 m_p = @. 0.5*r*(1 - 1/a^2)
