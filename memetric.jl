@@ -13,11 +13,13 @@ function deq_alpha(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, r)
     return alpha * dln_alpha
 end # de deq_alpha
 
-# Un paso RK4 para y' = f(y, r, args...)
+# RK4 general
 function rk4_step(f, y, r, dr, args...)
-    k1 = dr * f(y, r, args...)
-    k2 = dr * f(y + k1, r + dr, args...)
-    return y + (k1 + k2)/2
+    k1 = dr * f(y,               r,           args...)
+    k2 = dr * f(y + 0.5*k1,      r + 0.5*dr,  args...)
+    k3 = dr * f(y + 0.5*k2,      r + 0.5*dr,  args...)
+    k4 = dr * f(y + k3,          r + dr,      args...)
+    return y + (k1 + 2k2 + 2k3 + k4)/6
 end
 
 # Resolviendo a
@@ -33,21 +35,22 @@ for k in 1:Nr-1
     )
 end
 
-# Resolviendo alpha
-#alpha .= 0.0 # Arreglo solución de alpha
-alpha[Nr] = 1.0 / a[Nr] # Condición en el borde externo
+# Resolviendo alpha hacia atrás
 
-for k in Nr:-1:2                     # de Nr -> 2
-    alpha[k-1] = rk4_step(
+    alpha[Nr] = 1.0 / a[Nr]
+
+    for k in Nr:-1:2  # de Nr -> 2
+
+	alpha[k-1] = rk4_step(
         (alpha_loc, r_loc, a_k, phi1_k, phi2_k, psi1_k, psi2_k, pi1_k, pi2_k) ->
             deq_alpha(a_k, alpha_loc, phi1_k, phi2_k, psi1_k, psi2_k, pi1_k, pi2_k, r_loc),
-        alpha[k], r[k], -dr,         # ojo: paso negativo para ir hacia atrás
+        alpha[k], r[k], -dr,         # paso negativo para ir hacia atrás
         a[k], phi1[k], phi2[k], psi1[k], psi2[k], pi1[k], pi2[k]
-    )
-end
+	    )
+     end
 
-# Opcional, suavizar el centro:
-alpha[1] = alpha[2]
+    alpha[1] = alpha[2]
 
+	return nothing
 end # de la super función
 
