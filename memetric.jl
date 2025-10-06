@@ -21,7 +21,7 @@ function rk4_step(f, y, r, dr, args...)
 end
 
 # Resolviendo a
-a .= 0.0 # Arreglo solución de a
+#a .= 0.0 # Arreglo solución de a
 a[1] = 1.0 # Condición de frontera
 
 for k in 1:Nr-1
@@ -34,7 +34,7 @@ for k in 1:Nr-1
 end
 
 # Resolviendo alpha
-alpha .= 0.0 # Arreglo solución de alpha
+#alpha .= 0.0 # Arreglo solución de alpha
 alpha[Nr] = 1.0 / a[Nr] # Condición en el borde externo
 
 for k in Nr:-1:2                     # de Nr -> 2

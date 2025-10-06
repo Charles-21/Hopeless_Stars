@@ -99,9 +99,8 @@ pi1 = zeros(Float64, Nr)
 pi2 = @. - alpha0_real * a * phi1 / alpha
 
 # Función de masa de Schwarzschild
-m = [ri/2 * (1 - 1/ai^2) for (ri, ai) in zip(r, a)]
-
-# Verificando si el producto da 1
+m = @. 0.5*r*(1 - 1/a^2)
+# *erificando si el producto da 1
 Sigmata = a .* alpha
 
 # Guardar datos

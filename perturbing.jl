@@ -11,13 +11,13 @@ dperturbacion = @. -2 * (r - r0) / 0.1 * perturbacion # Derivada de la fokin per
 # Aplicando la perturbación a los campos
 phi1 .+= perturbacion
 psi1 .+= dperturbacion
-# pi1 .= -alpha0_real .* a ./ alpha .* phi1
+#pi1 .= -alpha0_real .* a ./ alpha .* phi1
 
 # Recalculando la métrica
 Metricas!(a, alpha, phi1, phi2, psi1, psi2, pi1, pi2, dr, Nr, r)
 
 # Recalculando la masa de Schwarzschild
-m = @. 0.5*r*(1 - 1/a^2)
+m_p = @. 0.5*r*(1 - 1/a^2)
 
 # Guardar datos
 open("data/Perturbing_State.dat", "w") do io
@@ -31,7 +31,7 @@ println("|----------------------------------------|")
 println()
 
 # Masa ADM
-masa_ADM_p = m[end]
+masa_ADM_p = m_p[end]
 println("Masa ADM = ", masa_ADM_p)
 
 # Diferencia porcentual del cambio de masa:
