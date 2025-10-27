@@ -54,5 +54,3 @@ La extensión ".rt" indica superficies. La extensión ".t" indica una función d
 ---
 **_Talacha_**
 ... con la que se estructuró la lógica y diseño del programa. Se alojan códigos que permiten entender el funcionamiento general.
-
-Wenas wenas
