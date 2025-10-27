@@ -11,7 +11,7 @@ Contiene dos comandos: **run** para ejecutar la evolución y **clean** para borr
 Parámetros de integración e inicialización.
 
 **_initial.jl_**:
-Solucionador para el estado estacionario utilizando RK4 y Shooting
+Solucionador para el estado de equilibrio utilizando RK4 y Shooting
 
 **_compacticity.jl_**: 
 
@@ -31,23 +31,23 @@ Añade la perturbación gaussiana y realiza los calculos de compacticity.jl para
 
 Discretización de los operadores temporales.
 
-**_metric.jl_**: 
+**_Supermetric.jl_**: 
 
 Discretización de las constricciones métricas.
 
 **_evolution.jl_**: 
 
-Contiene el ciclo principal de evolución. Arranca con el estado de equilibrio o bien con el estado perturbado.
+Contiene el ciclo principal de evolución utilizando el ICN iterado. Arranca con el estado de equilibrio o bien con el estado perturbado.
 
 **_savedata.jl_**: 
 Opera el almacenamiento de datos.
 
-**_Directorio "data"_**: 
+**_Directorio "data"_**: Contiene dos scripts de Gnuplot que permiten visualizar facilmente el estado de equilibrio.
 
 **_stationary.gn_**, **_perturbing.gn_**: 
 Scripts de gnuplot que lanzan la gráfica del estado inicial.
 
-Saludos desde la compu del cantón. Jeje
+**_Directorio "cuatro"_**: Ahí se alojan los datos de la norma del error numérico. 
 
 La extensión ".rt" indica superficies. La extensión ".t" indica una función dependiente sólo de t.
 
